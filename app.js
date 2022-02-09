@@ -128,4 +128,8 @@ app.get('/posts/:title',(req,res)=>{
 
 app.use(express.static("public"));
 
-app.listen(process.env.PORT||3000);
+let port = process.env.PORT || 3000;
+
+app.listen(port,()=>{
+    console.log('Successfully connected');
+});
