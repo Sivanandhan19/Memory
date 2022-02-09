@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+
+<!-- <div class="contents"> -->
+      
+    <div class='box'>
+        <h1 class="post-title">To do list</h1>  
+        <% for(var i=0; i<list.length ;i++){  %>
+            <form action="deleteItem" method="post">
+                <div class="item">
+                    <input type="checkbox" name="checkbox" onchange="this.form.submit()" value=<%= list[i]._id%>>
+                    <p><%= list[i].listitem %></p><br>
+                </div>
+            </form>                    
+        <% }  %> 
+        <form action="/todo" method="post">
+        <div class="form-group">
+            <input type="text" name="newItem" autocomplete="off" placeholder="Add item"><br><br>        
+        </div>
+        <button class="btn btn-primary" type="submit">ADD</button>
+        </form>
+    </div>
+<!-- </div> -->
+
+<%- include("partials/footer") %>
