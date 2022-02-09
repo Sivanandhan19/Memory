@@ -111,7 +111,6 @@ app.post('/compose',(req,res)=>{
         content: req.body.info
     }); 
     b.save();
-    // console.log(b);
     res.redirect('/compose');
 });
 
